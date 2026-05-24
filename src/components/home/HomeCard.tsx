@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
 
-import { radius } from "../../theme/radius";
+import { radius } from "@/src/theme/radius";
 
 type HomeCardProps = {
   background: string;

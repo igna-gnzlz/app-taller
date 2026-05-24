@@ -1,4 +1,4 @@
-import { useCategorias } from "@/src/hooks/useCategorias";
+import { useCategories } from "@/src/hooks/useCategories";
 import { useRouter } from "expo-router";
 import {
   ActivityIndicator,
@@ -11,7 +11,7 @@ import {
 
 export default function TanStackFetchScreen() {
   const router = useRouter();
-  const { data, isError, isFetching, isLoading } = useCategorias();
+  const { categorias, isError, isLoading } = useCategories("Bebidas");
 
   return (
     <View style={styles.safeArea}>
@@ -27,7 +27,7 @@ export default function TanStackFetchScreen() {
           {isError ? <ErrorState /> : null}
           {!isLoading && !isError ? (
             <FlatList
-              data={data}
+              data={categorias}
               keyExtractor={(item) => item}
               contentContainerStyle={styles.listContent}
               renderItem={({ item, index }) => (

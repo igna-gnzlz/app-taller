@@ -51,21 +51,6 @@ export default function RootLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="clases"
-        options={{
-          title: "Clases",
-          headerTitle: "Clases",
-          tabBarLabel: "Clases",
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "grid" : "grid-outline"}
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
     </Tabs>
   );
 }

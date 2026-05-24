@@ -1,7 +1,7 @@
-import { CategoriesGrid } from "../components/categories/CategoriesGrid";
-import { Header } from "../components/common/Header";
-import { ScreenContainer } from "../components/common/ScreenContainer";
-import { SectionHeader } from "../components/common/SectionHeader";
+import { CategoriesGrid } from "@/src/components/categories/CategoriesGrid";
+import { Header } from "@/src/components/common/Header";
+import { ScreenContainer } from "@/src/components/common/ScreenContainer";
+import { SectionHeader } from "@/src/components/common/SectionHeader";
 
 export function HomeScreen() {
   return (

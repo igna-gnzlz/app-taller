@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import { colors } from "../../theme/colors";
-import { spacing } from "../../theme/spacing";
+import { colors } from "@/src/theme/colors";
+import { spacing } from "@/src/theme/spacing";
 
 type SectionHeaderProps = {
   title: string;

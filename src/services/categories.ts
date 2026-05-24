@@ -1,27 +1,21 @@
-export async function getCategoriesV3(query: string = ""): Promise<string[]> {
-  // El dominio world.openfoodfacts.org es el estándar
-  const baseUrl = "https://world.openfoodfacts.org/api/v3/taxonomy_suggestions";
+const BASE_URL = "https://world.openfoodfacts.org/api/v3/taxonomy_suggestions";
 
-  // Parámetros obligatorios en v3:
-  // tagtype: qué tipo de datos queremos (categories)
-  // lc: código de idioma (es para español)
-  // string: el término de búsqueda
+export async function getCategoriesV3(query: string = ""): Promise<string[]> {
   const params = new URLSearchParams({
     tagtype: "categories",
     lc: "es",
     string: query,
     limit: "20",
   });
-  // tagtype=categories&lc=es&string={query}&limit=20
 
-  const response = await fetch(`${baseUrl}?${params.toString()}`, {
+  const response = await fetch(`${BASE_URL}?${params.toString()}`, {
     headers: {
       "User-Agent": "UNTDF TNT 2026", // OFF
     },
   });
 
   if (!response.ok) {
-    throw new Error(`Error HTTP: ${response.status}`);
+    throw new Error(`Error HTTP ${response.status}: ${response.statusText}`);
   }
 
   const data = await response.json();

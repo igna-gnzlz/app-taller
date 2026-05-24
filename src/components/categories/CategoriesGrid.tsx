@@ -1,8 +1,8 @@
 import { FlatList, useWindowDimensions } from "react-native";
 
-import { CategoryCard } from "../home/CategoryCard";
+import { CategoryCard } from "@/src/components/home/CategoryCard";
 
-import { categories } from "../../data/categories";
+import { categories } from "@/src/data/categories";
 
 export function CategoriesGrid() {
   const { width } = useWindowDimensions();

@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, ViewStyle } from "react-native";
 
-import { HomeCard } from "./HomeCard";
+import { HomeCard } from "@/src/components/home/HomeCard";
 
-import { colors } from "../../theme/colors";
+import { colors } from "@/src/theme/colors";
 
 type CategoryCardProps = {
   title: string;
