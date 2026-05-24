@@ -1,8 +1,9 @@
-import { CategoriesGrid } from "@/src/components/categories/CategoriesGrid";
 import { ChipGroup } from "@/src/components/common/ChipGroup";
 import { Header } from "@/src/components/common/Header";
 import { ScreenContainer } from "@/src/components/common/ScreenContainer";
 import { SectionHeader } from "@/src/components/common/SectionHeader";
+import { BrandsGrid } from "@/src/components/home/BrandsGrid";
+import { CategoriesGrid } from "@/src/components/home/CategoriesGrid";
 import { labels } from "@/src/data/labels";
 
 export function HomeScreen() {
@@ -20,6 +21,7 @@ export function HomeScreen() {
         title="Global Brands"
         subtitle="Explored through the lens of quality"
       />
+      <BrandsGrid />
     </ScreenContainer>
   );
 }

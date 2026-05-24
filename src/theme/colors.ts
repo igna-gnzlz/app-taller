@@ -7,6 +7,7 @@ export const colors = {
   textSecondary: "#666666",
 
   white: "#FFFFFF",
+  black: "#000000",
 
   border: "#E5E5E5",
 
