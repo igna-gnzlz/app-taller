@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# App de Taller de Nuevas Tecnologías
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicación desarrollada con **React Native + Expo** utilizando **TypeScript**.
 
-## Get started
+---
 
-1. Install dependencies
+# Requisitos previos
 
-   ```bash
-   npm install
-   ```
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
 
-2. Start the app
+- [Node.js](https://nodejs.org/)
+- [pnpm](https://pnpm.io/installation)
+- Expo Go (opcional, para probar en dispositivos móviles)
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Verificar instalación de `pnpm`:
 
 ```bash
-npm run reset-project
+pnpm --version
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+# Instalación y ejecución
 
-To learn more about developing your project with Expo, look at the following resources:
+## 1. Clonar el repositorio
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone <URL_DEL_REPOSITORIO>
+```
 
-## Join the community
+## 2. Ingresar a la carpeta del proyecto
 
-Join our community of developers creating universal apps.
+```bash
+cd <NOMBRE_DE_LA_CARPETA>
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 3. Instalar dependencias
+
+```bash
+pnpm install
+```
+
+## 4. Iniciar la aplicación
+
+```bash
+pnpm expo start
+```
+
+---
+
+# Ejecutar en distintas plataformas
+
+## Web
+
+```bash
+pnpm expo start --web
+```
+
+## Android
+
+Con un emulador abierto o utilizando Expo Go:
+
+```bash
+pnpm expo start --android
+```
+
+## iOS
+
+> Disponible únicamente en macOS.
+
+```bash
+pnpm expo start --ios
+```
+
+---
+
+# Uso con Expo Go
+
+1. Instalar la aplicación **Expo Go** en el dispositivo móvil.
+2. Conectar el celular y la computadora a la misma red Wi‑Fi.
+3. Ejecutar:
+
+```bash
+pnpm expo start
+```
+
+4. Escanear el código QR desde Expo Go.
+
+---
+
+# Tecnologías utilizadas
+
+- React Native
+- Expo
+- TypeScript
+- pnpm
