@@ -4,7 +4,6 @@ import { ScreenContainer } from "@/src/components/common/ScreenContainer";
 import { SectionHeader } from "@/src/components/common/SectionHeader";
 import { BrandsGrid } from "@/src/components/home/BrandsGrid";
 import { CategoriesGrid } from "@/src/components/home/CategoriesGrid";
-import { labels } from "@/src/data/labels";
 
 export function HomeScreen() {
   return (
@@ -15,7 +14,7 @@ export function HomeScreen() {
       <CategoriesGrid />
 
       <SectionHeader title="Refine by Taste" />
-      <ChipGroup items={labels} />
+      <ChipGroup />
 
       <SectionHeader
         title="Global Brands"

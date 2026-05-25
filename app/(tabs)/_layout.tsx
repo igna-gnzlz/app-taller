@@ -5,6 +5,7 @@ import { Tabs } from "expo-router";
 export default function RootLayout() {
   return (
     <Tabs
+      initialRouteName="index"
       screenOptions={{
         headerShown: false,
         tabBarActiveTintColor: colors.text,
@@ -15,6 +16,21 @@ export default function RootLayout() {
         },
       }}
     >
+      <Tabs.Screen
+        name="scan"
+        options={{
+          title: "Scan",
+          headerTitle: "Scan",
+          tabBarLabel: "Scan",
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name={focused ? "scan" : "scan-outline"}
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{

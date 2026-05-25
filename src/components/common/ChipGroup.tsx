@@ -1,16 +1,17 @@
 import { Chip } from "@/src/components/common/Chip";
+import { labels } from "@/src/data/labels";
 import { spacing } from "@/src/theme/spacing";
 import { StyleSheet, View } from "react-native";
 
 type ChipGroupProps = {
-  items: { id: string; label: string }[];
+  items?: { id: string; label: string }[];
   backgroundColor?: string;
   textColor?: string;
   onChipPress?: (id: string) => void;
 };
 
 export function ChipGroup({
-  items,
+  items = labels,
   backgroundColor,
   textColor,
   onChipPress,
