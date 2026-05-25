@@ -1,7 +1,6 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { Image as ImageRN, StyleSheet, Text, View } from "react-native";
 
-import nvidiaLogo from "@/src/assets/nvidia.png";
 import { Image } from "expo-image";
 
 const blurhash =
@@ -11,7 +10,6 @@ export default function ImagenGradients() {
   return (
     <View style={styles.container}>
       <Text>Imagen Local con RN</Text>
-      <ImageRN source={nvidiaLogo} />
       <Text>Imagen Remota con RN</Text>
       <ImageRN
         source={{ uri: "https://www.untdf.edu.ar/img/isologotipo.png" }}
@@ -19,7 +17,6 @@ export default function ImagenGradients() {
         style={{ backgroundColor: "red" }}
       />
       <Text>Expo image Local</Text>
-      <Image source={nvidiaLogo} style={{ height: 50 }} contentFit="contain" />
       <Text>Expo image Remota</Text>
       <Image
         source="https://www.untdf.edu.ar/img/isologotipo.png"

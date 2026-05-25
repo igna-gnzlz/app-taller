@@ -34,9 +34,9 @@ export default function RootLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Inicio",
-          headerTitle: "Inicio",
-          tabBarLabel: "Inicio",
+          title: "Home",
+          headerTitle: "Home",
+          tabBarLabel: "Home",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "home" : "home-outline"}
@@ -49,9 +49,9 @@ export default function RootLayout() {
       <Tabs.Screen
         name="search"
         options={{
-          title: "Buscar",
-          headerTitle: "Buscar",
-          tabBarLabel: "Buscar",
+          title: "Search",
+          headerTitle: "Search",
+          tabBarLabel: "Search",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "search" : "search-outline"}
@@ -64,9 +64,9 @@ export default function RootLayout() {
       <Tabs.Screen
         name="favorites"
         options={{
-          title: "Favoritos",
-          headerTitle: "Favoritos",
-          tabBarLabel: "Favoritos",
+          title: "Favorites",
+          headerTitle: "Favorites",
+          tabBarLabel: "Favorites",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "heart" : "heart-outline"}
