@@ -7,19 +7,19 @@ import { spacing } from "@/src/theme/spacing";
 
 type BrandCardProps = {
   title: string;
-  background?: string;
+  backgroundColor?: string;
   circleColor?: string;
   style?: ViewStyle;
 };
 
 export function BrandCard({
   title,
-  background = colors.white,
+  backgroundColor = colors.surfaceSecondary,
   circleColor,
   style,
 }: BrandCardProps) {
   return (
-    <HomeCard background={background} style={style}>
+    <HomeCard backgroundColor={backgroundColor} style={style}>
       <View style={styles.container}>
         <View
           style={[

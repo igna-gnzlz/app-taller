@@ -7,9 +7,7 @@ export function CategoriesGrid() {
     <Grid
       data={categories}
       keyExtractor={(item) => item.id}
-      renderItem={(item) => (
-        <CategoryCard title={item.title} background={item.color} />
-      )}
+      renderItem={(item) => <CategoryCard title={item.title} />}
     />
   );
 }

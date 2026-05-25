@@ -1,11 +1,11 @@
+import { colors } from "@/src/theme/colors";
+import { spacing } from "@/src/theme/spacing";
+import { ReactNode } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-import { colors } from "@/src/theme/colors";
-import { spacing } from "@/src/theme/spacing";
-
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export function ScreenContainer({ children }: Props) {
@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
 
   content: {
     padding: spacing.md,
+    paddingBottom: 0,
   },
 });

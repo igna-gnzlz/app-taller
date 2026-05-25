@@ -14,7 +14,7 @@ export function Header({ title }: HeaderProps) {
     <View style={styles.container}>
       {/* Left section */}
       <TouchableOpacity>
-        <Ionicons name="menu-outline" size={28} color={colors.textPrimary} />
+        <Ionicons name="menu-outline" size={28} color={colors.text} />
       </TouchableOpacity>
 
       {/* Center title */}
@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "600",
     marginLeft: spacing.sm,
-    color: colors.textPrimary,
+    color: colors.text,
   },
 });

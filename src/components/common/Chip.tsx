@@ -1,3 +1,4 @@
+import { colors } from "@/src/theme/colors";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 type ChipProps = {
@@ -9,8 +10,8 @@ type ChipProps = {
 
 export function Chip({
   label,
-  backgroundColor = "#C8F0C8",
-  textColor = "#2D6A2D",
+  backgroundColor = colors.surfaceSecondary,
+  textColor = colors.textSecondary,
   onPress,
 }: ChipProps) {
   return (

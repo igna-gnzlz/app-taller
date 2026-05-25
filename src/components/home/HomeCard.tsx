@@ -1,16 +1,17 @@
+import { colors } from "@/src/theme/colors";
+import { radius } from "@/src/theme/radius";
+import { ReactNode } from "react";
 import { StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
 
-import { radius } from "@/src/theme/radius";
-
 type HomeCardProps = {
-  background: string;
+  backgroundColor?: string;
   style?: ViewStyle;
-  children: React.ReactNode;
+  children: ReactNode;
   onPress?: () => void;
 };
 
 export function HomeCard({
-  background,
+  backgroundColor = colors.primary,
   children,
   onPress,
   style,
@@ -18,7 +19,7 @@ export function HomeCard({
   return (
     <TouchableOpacity
       onPress={onPress}
-      style={[styles.container, { backgroundColor: background }, style]}
+      style={[styles.container, { backgroundColor }, style]}
     >
       {children}
     </TouchableOpacity>
@@ -29,10 +30,8 @@ const styles = StyleSheet.create({
   container: {
     height: 150,
     borderRadius: radius.sm,
-    // shadow for android
-    elevation: 4,
-    // shadow for iOS
-    shadowColor: "#000",
+    elevation: 4, // shadow for android
+    shadowColor: "#000", // shadow for iOS
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,

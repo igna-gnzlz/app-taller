@@ -1,17 +1,26 @@
+import { colors } from "@/src/theme/colors";
 import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 
 export default function RootLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: colors.text,
+        tabBarInactiveTintColor: colors.textSecondary,
+        tabBarStyle: {
+          backgroundColor: colors.primaryLight,
+          borderTopColor: colors.primaryLight,
+        },
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: "Inicio",
           headerTitle: "Inicio",
           tabBarLabel: "Inicio",
-          tabBarActiveTintColor: "red",
-          tabBarInactiveTintColor: "green",
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "home" : "home-outline"}

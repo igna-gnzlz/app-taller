@@ -1,19 +1,20 @@
-import { StyleSheet, Text, View, ViewStyle } from "react-native";
-
 import { HomeCard } from "@/src/components/home/HomeCard";
-
 import { colors } from "@/src/theme/colors";
+import { StyleSheet, Text, View, ViewStyle } from "react-native";
 
 type CategoryCardProps = {
   title: string;
-
-  background: string;
+  backgroundColor?: string;
   style?: ViewStyle;
 };
 
-export function CategoryCard({ title, background, style }: CategoryCardProps) {
+export function CategoryCard({
+  title,
+  backgroundColor,
+  style,
+}: CategoryCardProps) {
   return (
-    <HomeCard background={background} style={style}>
+    <HomeCard backgroundColor={backgroundColor} style={style}>
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
       </View>
@@ -30,9 +31,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-
     fontWeight: "700",
-
     color: colors.white,
   },
 });
