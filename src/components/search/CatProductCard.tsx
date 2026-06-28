@@ -1,6 +1,6 @@
-import { colors } from "@/src/theme/colors";
-import { radius } from "@/src/theme/radius";
-import { spacing } from "@/src/theme/spacing";
+import { colors } from "@/src/constants/colors";
+import { radius } from "@/src/constants/radius";
+import { spacing } from "@/src/constants/spacing";
 import { Ionicons } from "@expo/vector-icons";
 import {
   StyleSheet,

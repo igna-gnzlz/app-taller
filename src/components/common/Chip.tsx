@@ -1,4 +1,4 @@
-import { colors } from "@/src/theme/colors";
+import { colors } from "@/src/constants/colors";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 type ChipProps = {

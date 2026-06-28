@@ -1,5 +1,5 @@
 import { HomeCard } from "@/src/components/home/HomeCard";
-import { colors } from "@/src/theme/colors";
+import { colors } from "@/src/constants/colors";
 import { StyleSheet, Text, View, ViewStyle } from "react-native";
 
 type CategoryCardProps = {

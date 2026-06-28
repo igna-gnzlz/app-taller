@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, ViewStyle } from "react-native";
 
 import { HomeCard } from "@/src/components/home/HomeCard";
 
-import { colors } from "@/src/theme/colors";
-import { spacing } from "@/src/theme/spacing";
+import { colors } from "@/src/constants/colors";
+import { spacing } from "@/src/constants/spacing";
 
 type BrandCardProps = {
   title: string;

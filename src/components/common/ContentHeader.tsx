@@ -1,5 +1,5 @@
-import { colors } from "@/src/theme/colors";
-import { spacing } from "@/src/theme/spacing";
+import { colors } from "@/src/constants/colors";
+import { spacing } from "@/src/constants/spacing";
 import { StyleSheet, Text, View } from "react-native";
 
 type ContentHeaderProps = {

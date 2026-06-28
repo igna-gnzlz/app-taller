@@ -2,8 +2,8 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 import { Ionicons } from "@expo/vector-icons";
 
-import { colors } from "@/src/theme/colors";
-import { spacing } from "@/src/theme/spacing";
+import { colors } from "@/src/constants/colors";
+import { spacing } from "@/src/constants/spacing";
 
 type HeaderProps = {
   title: string;

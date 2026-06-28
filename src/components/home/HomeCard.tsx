@@ -1,5 +1,5 @@
-import { colors } from "@/src/theme/colors";
-import { radius } from "@/src/theme/radius";
+import { colors } from "@/src/constants/colors";
+import { radius } from "@/src/constants/radius";
 import { ReactNode } from "react";
 import { StyleSheet, TouchableOpacity, ViewStyle } from "react-native";
 

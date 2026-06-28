@@ -1,4 +1,4 @@
-import { spacing } from "@/src/theme/spacing";
+import { spacing } from "@/src/constants/spacing";
 import { FlatList, useWindowDimensions, View, ViewStyle } from "react-native";
 
 type GridProps<T> = {

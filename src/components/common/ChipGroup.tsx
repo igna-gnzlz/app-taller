@@ -1,6 +1,6 @@
 import { Chip } from "@/src/components/common/Chip";
+import { spacing } from "@/src/constants/spacing";
 import { labels } from "@/src/data/labels";
-import { spacing } from "@/src/theme/spacing";
 import { StyleSheet, View } from "react-native";
 
 type ChipGroupProps = {
