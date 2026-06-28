@@ -1,6 +1,7 @@
-const BASE_URL = "https://world.openfoodfacts.org/api/v3/taxonomy_suggestions";
-
 export async function getCategoriesV3(query: string = ""): Promise<string[]> {
+  const BASE_URL_API = process.env.EXPO_PUBLIC_API_URL;
+  const BASE_URL = `${BASE_URL_API}/v3/taxonomy_suggestions`;
+
   const params = new URLSearchParams({
     tagtype: "categories",
     lc: "es",
