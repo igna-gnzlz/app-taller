@@ -1,4 +1,3 @@
-import { useProductos } from "@/src/hooks/useProductos";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { StyleSheet, Text, View } from "react-native";
 

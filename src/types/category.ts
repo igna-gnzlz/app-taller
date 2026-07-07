@@ -1,4 +1,6 @@
-export interface Category {
+export type Category = {
   id: string;
-  title: string;
-}
+  name: string;
+  gradientColors: [string, string];
+  textColor: string;
+};

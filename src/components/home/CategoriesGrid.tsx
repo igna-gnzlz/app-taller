@@ -7,7 +7,13 @@ export function CategoriesGrid() {
     <Grid
       data={categories}
       keyExtractor={(item) => item.id}
-      renderItem={(item) => <CategoryCard title={item.title} />}
+      renderItem={(item) => (
+        <CategoryCard
+          name={item.name}
+          gradientsColors={item.gradientColors}
+          textColor={item.textColor}
+        />
+      )}
     />
   );
 }

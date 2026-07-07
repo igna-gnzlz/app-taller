@@ -1,37 +1,38 @@
 import { HomeCard } from "@/src/components/home/HomeCard";
-import { colors } from "@/src/constants/colors";
 import { StyleSheet, Text, View, ViewStyle } from "react-native";
 
 type CategoryCardProps = {
-  title: string;
+  name: string;
   backgroundColor?: string;
+  gradientsColors: [string, string];
+  textColor: string;
   style?: ViewStyle;
 };
 
 export function CategoryCard({
-  title,
-  backgroundColor,
+  name,
+  gradientsColors,
+  textColor,
   style,
 }: CategoryCardProps) {
   return (
-    <HomeCard backgroundColor={backgroundColor} style={style}>
-      <View style={styles.container}>
-        <Text style={styles.title}>{title}</Text>
+    <HomeCard gradientColors={gradientsColors} style={style}>
+      <View style={styles.content}>
+        <Text style={[styles.categoryText, { color: textColor }]}>{name}</Text>
       </View>
     </HomeCard>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  content: {
     flex: 1,
     justifyContent: "flex-end",
-    alignItems: "center",
     padding: 16,
   },
-  title: {
+  categoryText: {
     fontSize: 18,
     fontWeight: "700",
-    color: colors.white,
+    lineHeight: 22,
   },
 });

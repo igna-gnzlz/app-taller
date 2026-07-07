@@ -17,21 +17,6 @@ export default function RootLayout() {
       }}
     >
       <Tabs.Screen
-        name="scan"
-        options={{
-          title: "Scan",
-          headerTitle: "Scan",
-          tabBarLabel: "Scan",
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "scan" : "scan-outline"}
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
         name="index"
         options={{
           title: "Home",
@@ -55,21 +40,6 @@ export default function RootLayout() {
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name={focused ? "search" : "search-outline"}
-              size={size}
-              color={color}
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="favorites"
-        options={{
-          title: "Favorites",
-          headerTitle: "Favorites",
-          tabBarLabel: "Favorites",
-          tabBarIcon: ({ color, size, focused }) => (
-            <Ionicons
-              name={focused ? "heart" : "heart-outline"}
               size={size}
               color={color}
             />
