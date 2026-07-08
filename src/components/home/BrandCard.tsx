@@ -10,6 +10,7 @@ type BrandCardProps = {
   backgroundColor?: string;
   circleColor?: string;
   style?: ViewStyle;
+  onPress?: () => void;
 };
 
 export function BrandCard({
@@ -17,9 +18,10 @@ export function BrandCard({
   backgroundColor = colors.surfaceSecondary,
   circleColor,
   style,
+  onPress,
 }: BrandCardProps) {
   return (
-    <HomeCard backgroundColor={backgroundColor} style={style}>
+    <HomeCard backgroundColor={backgroundColor} style={style} onPress={onPress}>
       <View style={styles.container}>
         <View
           style={[

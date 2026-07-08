@@ -1,6 +1,8 @@
 import { Grid } from "@/src/components/common/Grid";
 import { CategoryCard } from "@/src/components/home/CategoryCard";
 import { categories } from "@/src/data/categories";
+import { buildRoute, ROUTES } from "@/src/navigation/routes";
+import { router } from "expo-router";
 
 export function CategoriesGrid() {
   return (
@@ -12,6 +14,9 @@ export function CategoriesGrid() {
           name={item.name}
           gradientsColors={item.gradientColors}
           textColor={item.textColor}
+          onPress={() =>
+            router.push(buildRoute(ROUTES.CATEGORIA, { nombre: item.id }))
+          }
         />
       )}
     />

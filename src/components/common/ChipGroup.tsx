@@ -1,20 +1,20 @@
 import { Chip } from "@/src/components/common/Chip";
 import { spacing } from "@/src/constants/spacing";
 import { Label, labels } from "@/src/data/labels";
+import { buildRoute, ROUTES } from "@/src/navigation/routes";
+import { router } from "expo-router";
 import { StyleSheet, View } from "react-native";
 
 type ChipGroupProps = {
   items?: Label[];
   backgroundColor?: string;
   textColor?: string;
-  onChipPress?: (id: string) => void;
 };
 
 export function ChipGroup({
   items = labels,
   backgroundColor,
   textColor,
-  onChipPress,
 }: ChipGroupProps) {
   return (
     <View style={styles.container}>
@@ -24,7 +24,9 @@ export function ChipGroup({
           label={item.name}
           backgroundColor={backgroundColor}
           textColor={textColor}
-          onPress={() => onChipPress?.(item.id)}
+          onPress={() =>
+            router.push(buildRoute(ROUTES.ETIQUETA, { nombre: item.id }))
+          }
         />
       ))}
     </View>

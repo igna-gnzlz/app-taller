@@ -1,12 +1,12 @@
 import { HomeCard } from "@/src/components/home/HomeCard";
-import { StyleSheet, Text, View, ViewStyle } from "react-native";
+import { StyleProp, StyleSheet, Text, View, ViewStyle } from "react-native";
 
 type CategoryCardProps = {
   name: string;
-  backgroundColor?: string;
   gradientsColors: [string, string];
   textColor: string;
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
+  onPress?: () => void;
 };
 
 export function CategoryCard({
@@ -14,9 +14,10 @@ export function CategoryCard({
   gradientsColors,
   textColor,
   style,
+  onPress,
 }: CategoryCardProps) {
   return (
-    <HomeCard gradientColors={gradientsColors} style={style}>
+    <HomeCard gradientColors={gradientsColors} style={style} onPress={onPress}>
       <View style={styles.content}>
         <Text style={[styles.categoryText, { color: textColor }]}>{name}</Text>
       </View>

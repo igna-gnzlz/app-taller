@@ -5,12 +5,9 @@ export const ROUTES = {
   TABS_FAVS: "/favoritos",
   TABS_CLASES: "/clases",
   ALIMENTO: "/alimento",
-  FORMULARIO_PASO_1: "/formulario/paso1",
-  FORMULARIO_PASO_2: "/formulario/paso2",
-  CATEGORIA: "/categorias/[nombre]",
-  MARCA: "/marcas/[nombre]",
-  ETIQUETA: "/etiquetas/[nombre]",
-  FICHA: "/ficha/[id]",
+  CATEGORIA: "/categories/[nombre]",
+  MARCA: "/brands/[nombre]",
+  ETIQUETA: "/labels/[nombre]",
   LISTA_FLATLIST: "/ejemplos/lista-flatlist",
   SIMPLE_STATE: "/ejemplos/simple-state",
   INPUT_FILTER: "/ejemplos/input-filter",
@@ -35,7 +32,3 @@ export const buildRoute = (route: AppRoute, params?: RouteParams): Href => {
     params,
   } as Href;
 };
-
-export function fichaShowRoute(id: number) {
-  return buildRoute(ROUTES.FICHA, { id: id.toString() });
-}

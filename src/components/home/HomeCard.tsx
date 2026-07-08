@@ -2,15 +2,21 @@ import { colors } from "@/src/constants/colors";
 import { radius } from "@/src/constants/radius";
 import { LinearGradient } from "expo-linear-gradient";
 import { ReactNode } from "react";
-import { Pressable, StyleSheet, View, ViewStyle } from "react-native";
+import {
+  Pressable,
+  StyleProp,
+  StyleSheet,
+  View,
+  ViewStyle,
+} from "react-native";
 
 type HomeCardProps = {
   backgroundColor?: string;
   gradientColors?: [string, string];
-  style?: ViewStyle;
+  style?: StyleProp<ViewStyle>;
+  pressedStyle?: StyleProp<ViewStyle>;
   children: ReactNode;
   onPress?: () => void;
-  key?: string | number;
 };
 
 export function HomeCard({
@@ -19,10 +25,17 @@ export function HomeCard({
   children,
   onPress,
   style,
-  key,
+  pressedStyle,
 }: HomeCardProps) {
   return (
-    <Pressable key={key} onPress={onPress} style={[styles.container, style]}>
+    <Pressable
+      onPress={onPress}
+      style={({ pressed }) => [
+        styles.container,
+        style,
+        pressed && pressedStyle,
+      ]}
+    >
       {gradientColors ? (
         <LinearGradient
           colors={gradientColors}

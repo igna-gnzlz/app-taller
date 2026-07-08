@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { searchProducts } from "../services/productos.service";
+import { searchProducts } from "../services/products.service";
 import { transformSearchProductsResponse } from "../transformers/search-products.transformer";
 
 export function useProductosByCategoria(categoria: string) {

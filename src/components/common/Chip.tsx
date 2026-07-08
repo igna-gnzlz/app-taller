@@ -1,5 +1,5 @@
 import { colors } from "@/src/constants/colors";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Pressable, StyleSheet, Text } from "react-native";
 
 type ChipProps = {
   label: string;
@@ -15,12 +15,9 @@ export function Chip({
   onPress,
 }: ChipProps) {
   return (
-    <TouchableOpacity
-      style={[styles.chip, { backgroundColor }]}
-      onPress={onPress}
-    >
+    <Pressable style={[styles.chip, { backgroundColor }]} onPress={onPress}>
       <Text style={[styles.label, { color: textColor }]}>{label}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 }
 

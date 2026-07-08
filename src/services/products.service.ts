@@ -10,7 +10,7 @@ export async function getProduct(id: string): Promise<Product> {
   const getParams =
     "?fields=abbreviated_product_name,ecoscore_grade,id,image_url,ingredients_text,nutriscore_grade,nutriscore_score,nutriments";
 
-  const url = `${BASE_URL}/v2/product/${encodeURIComponent(id)}${getParams}`;
+  const url = `${BASE_URL}/api/v2/product/${encodeURIComponent(id)}${getParams}`;
 
   const response = await fetch(url, {
     headers: { "User-Agent": "UNTDF TNT 2026" },
@@ -29,12 +29,12 @@ export async function getProduct(id: string): Promise<Product> {
   return data.product;
 }
 
-export async function searchProducts(
+export async function searchProductsByCategory(
   categorias: string,
   page: number = 1,
 ): Promise<ProductSearchResponse> {
   const BASE_URL = process.env.EXPO_PUBLIC_API_URL;
-  const url = `${BASE_URL}/v2/search`;
+  const url = `${BASE_URL}/api/v2/search`;
   const params = new URLSearchParams({
     // brands_tags: "ferrero",
     // labels_tags: "organic",
@@ -56,14 +56,16 @@ export async function searchProducts(
   return data as ProductSearchResponse;
 }
 
-export async function searchProductsByQuery(
-  query: string,
+export async function searchProductsByLabel(
+  labelId: string,
+  page: number = 1,
 ): Promise<ProductSearchResponse> {
   const BASE_URL = process.env.EXPO_PUBLIC_API_URL;
-  const url = `${BASE_URL}/v2/search`;
+  const url = `${BASE_URL}/api/v2/search`;
   const params = new URLSearchParams({
-    search_terms: query,
-    fields: "id,product_name,brands,image_url,nutriscore_grade,ecoscore_grade",
+    labels_tags: labelId,
+    page_size: "10",
+    page: String(page),
   });
 
   const response = await fetch(`${url}?${params.toString()}`, {
@@ -76,6 +78,71 @@ export async function searchProductsByQuery(
 
   const data = await response.json();
 
+  return data as ProductSearchResponse;
+}
+
+export async function searchProductsByBrand(
+  brandId: string,
+  page: number = 1,
+): Promise<ProductSearchResponse> {
+  const BASE_URL = process.env.EXPO_PUBLIC_API_URL;
+  const url = `${BASE_URL}/api/v2/search`;
+  const params = new URLSearchParams({
+    brands_tags: brandId,
+    page_size: "10",
+    page: String(page),
+  });
+
+  const response = await fetch(`${url}?${params.toString()}`, {
+    headers: { "User-Agent": "UNTDF TNT 2026" },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
+
+  const data = await response.json();
+
+  return data as ProductSearchResponse;
+}
+
+export async function searchProducts(
+  query: string,
+  page: number = 1,
+): Promise<ProductSearchResponse> {
+  const BASE_URL = process.env.EXPO_PUBLIC_API_URL;
+  const url = `${BASE_URL}/cgi/search.pl`;
+
+  const params = new URLSearchParams({
+    search_terms: query,
+    search_simple: "1",
+    action: "process",
+    json: "1",
+    page: String(page),
+    page_size: "10",
+    fields: "_id,product_name,brands,image_url,nutriscore_grade,ecoscore_grade",
+  });
+
+  const response = await fetch(`${url}?${params.toString()}`, {
+    headers: {
+      "User-Agent": "UNTDF TNT 2026",
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Error HTTP: ${response.status}`);
+  }
+
+  const data = await response.json();
+  // // logs
+  // console.log("Query:", query);
+  // console.log("URL:", `${url}?${params.toString()}`);
+  // console.log(
+  //   data.products.slice(0, 5).map((p: any) => ({
+  //     id: p._id,
+  //     name: p.product_name,
+  //   })),
+  // );
   return data as ProductSearchResponse;
 }
 
